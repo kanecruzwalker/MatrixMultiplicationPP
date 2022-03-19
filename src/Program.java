@@ -45,3 +45,8 @@ public class Program {
         }
     }
 }
+
+//Big thanks to the following :
+//https://www.programiz.com/java-programming/examples/multiply-matrix-function
+//https://www.youtube.com/watch?v=sxHRXwXhpRI
+//https://mathbits.com/MathBits/Java/arrays/Matrices.htm
