@@ -12,9 +12,14 @@ public class Program {
         //Get Matrix of 2 matrices multiplied (Product of two patrices)
         int[][] newMatrix = getMultipliedMatrices(matrixA, matrixB, rowAndCol);
 
+        //Get Number of Connections
+        int numberOfConnections = getConnectionsInMatrix(newMatrix);
+
         //Output new matrix created when multiplying 2 matrices
         displayProduct(newMatrix);
 
+        //Output number of connections in matrix
+        displayConnections(numberOfConnections);
 
         //------------To Do
         //Output number of connections within the directed graph being depicted
@@ -34,6 +39,16 @@ public class Program {
         return resultingMatrix;
     }
 
+    //Pass 1 matrics, return an int number of connections
+    public static int getConnectionsInMatrix(int[][] matrixIn){
+        //Return value, set to -9 to establish value
+        int intOut = -9;
+        //calculate connections
+        //set intOut = connectionsCount
+        return intOut;
+    }
+
+
     //Display a Matrix
     public static void displayProduct(int[][] product){
         System.out.println("Product of two matrices is: ");
@@ -43,6 +58,11 @@ public class Program {
             }
             System.out.println();
         }
+    }
+
+    //Display Connections
+    public static void displayConnections(int connectionIn){
+        System.out.println("Number of connections is: " + connectionIn);
     }
 }
 
