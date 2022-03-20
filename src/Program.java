@@ -1,29 +1,37 @@
 public class Program {
     public static void main(String[] args) {
+
+        //------------To Do
+        //Understand the logic of connections and implement in java
+        //Allow user to input a matrix of their choice
+
         //Dimension of matrices in use
         int rowAndCol = 4;
-
-        //Program Matrices into code
 
         //2 Matrices to be used
         int[][] matrixA = {{1,0,0,1},{0,1,0,1},{0,0,1,0},{1,1,1,0}};
         int[][] matrixB = {{0,1,1,1},{1,1,0,1},{0,1,0,1},{1,0,1,0}};
 
-        //Get Matrix of 2 matrices multiplied (Product of two patrices)
+        //Get Matrix of 2 matrices multiplied (Product of two matrices)
         int[][] newMatrix = getMultipliedMatrices(matrixA, matrixB, rowAndCol);
 
+        int[][] userMatrix1 = getMatrixFromUser();
         //Get Number of Connections
         int numberOfConnections = getConnectionsInMatrix(newMatrix);
 
+        //---Work Towards User Inputed Data---
+        //int[][] userMatrix2 = getMatrixFromUser();
+        //int[][] usersMatrixProduct = getMultipliedMatrices(userMatrix1, userMatrix2, rowAndCol);
+        //int numberOfConnectionsUserInput = getConnectionsInMatrix(usersMatrixProduct);
+        //displayInputedMatrix1(userMatrix1);
+        //displayConnections(numberOfConnectionsUserInput);
+        //--------------------
+
         //Output new matrix created when multiplying 2 matrices
         displayProduct(newMatrix);
-
         //Output number of connections in matrix
         displayConnections(numberOfConnections);
 
-        //------------To Do
-        //Output number of connections within the directed graph being depicted
-        //Get User Input as well as hard coded
     }
 
     //Pass 2 Matrices return a Matrix of the product
@@ -58,6 +66,27 @@ public class Program {
             }
             System.out.println();
         }
+    }
+
+
+//    //Display a MatrixInputed
+//    public static void displayInputedMatrix1(int[][] product){
+//        System.out.println("Product of two matrices is: ");
+//        for(int[] row : product){
+//            for(int column : row){
+//                System.out.print(column + "   ");
+//            }
+//            System.out.println();
+//        }
+//    }
+
+    public static int[][] getMatrixFromUser(){
+       int[][] outputMatrix = {{-2,-4},{-2,-4},{-2,-4},{-2,-4},{-2,-4}};
+       //set outputMatrix = getMatrixValues
+        //Scanner
+        //Loop , try catch , validate non valid
+
+        return outputMatrix;
     }
 
     //Display Connections
