@@ -6,9 +6,6 @@ public class Program {
         //Understand the logic of connections and implement in java
         //Allow user to input a matrix of their choice
 
-        initialGreeting();
-        runProgram();
-
         //Dimension of matrices in use
         int rowAndCol = 4;
         //2 Matrices to be used
@@ -20,20 +17,24 @@ public class Program {
         //Get Number of Connections
         int numberOfConnections = getConnectionsInMatrix(newMatrix);
 
+        initialGreeting();
+        runProgram(newMatrix, numberOfConnections);
+
+        //Put these in runProgram
+
         //Output new matrix created when multiplying 2 matrices
-        displayProduct(newMatrix);
+        //displayProduct(newMatrix);
         //Output number of connections in matrix
-        displayConnections(numberOfConnections);
+        //displayConnections(numberOfConnections);
     }
 
     public static void initialGreeting(){
-        System.out.println("Welcome to Matrix Connections");
-        System.out.println("-We have provided a Matrix A and B-");
-        System.out.println("Please input integer values to navigate the program");
-        System.out.println("------------------------------------------------------------------");
+        System.out.println("-------------Welcome to Matrix Connections-------------");
+        System.out.println("        -We have provided a Matrix A and B-");
+        System.out.println("-Please input integer values to navigate the program-\n");
     }
 
-    public static void runProgram(){
+    public static void runProgram(int[][] matrix, int connections){
         int menuChoice;
 
         while(true){
@@ -41,18 +42,27 @@ public class Program {
             menuChoice = getMenuChoice();
             switch (menuChoice){
                 case 1:
-                    System.out.println("You have chosen " + menuChoice);
+                    System.out.println("\nYou have chosen ("+menuChoice+") : The product of Matrix A and B is as follows : ");
+                    //Output new matrix created when multiplying 2 matrices
+                    displayProduct(matrix);
+
                     break;
                 case 2:
-                    System.out.println("You have chosen " + menuChoice);
+                    System.out.println("\nYou have chosen ("+menuChoice+") : The number of Connection in the Matrix C");
+                    //Output number of connections in matrix
+                    displayConnections(connections);
+
+
                     break;
                 case 3:
-                    System.out.println("You have chosen " + menuChoice);
+                    System.out.println("\nYou have chosen ("+menuChoice+") -Inputting your own matrix-");
+                    System.out.println("Working on matrix input ability");
+
                     break;
                 case 4:
-                    System.out.println("You have chosen " + menuChoice);
-                    System.out.println("\n" +
-                            "=====================================================================");
+                    System.out.println("\nYou have chosen (" + menuChoice + ") -Exit Program-");
+                    System.out.println("=====================================================================");
+
                     System.out.println("Thank you for using the program. I hope you enjoyed the experience :D");
                     System.out.println("=====================================================================");
                     System.exit(0);
@@ -70,7 +80,7 @@ public class Program {
         int menuIntChoice = 0;
 
         while(!done){
-            System.out.println("Enter your input here : ");
+            System.out.print("Enter your input here : ");
             stringInput = menuInput.nextLine();
             try{
                 menuIntChoice = Integer.parseInt(stringInput);
@@ -88,10 +98,10 @@ public class Program {
     }
 
     public static void programMenu(){
-        System.out.println("Input one of the following");
-        System.out.println("(1) Check the product of two matrices");
-        System.out.println("(2) Check the number of connections in a matrix");
-        System.out.println("(3) Input 2 matrices");
+        System.out.println("---------------Input One of the following--------------");
+        System.out.println("(1) Check the Product of Two Matrices");
+        System.out.println("(2) Check the number of Connections in a Matrix");
+        System.out.println("(3) Input 2 Matrices");
         System.out.println("(4) Exit Program");
     }
 
@@ -119,7 +129,8 @@ public class Program {
 
     //Display a Matrix
     public static void displayProduct(int[][] product){
-        System.out.println("Product of two matrices is: ");
+        System.out.println("A x B = C\nC:" +
+                "");
         for(int[] row : product){
             for(int column : row){
                 System.out.print(column + "   ");
@@ -130,7 +141,7 @@ public class Program {
 
     //Display Connections
     public static void displayConnections(int connectionIn){
-        System.out.println("Number of connections is: " + connectionIn);
+        System.out.println(connectionIn +" connections found in matrix C (The product of matrix A and B)");
     }
 
 
