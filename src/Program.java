@@ -80,7 +80,7 @@ public class Program {
         }
     }
 
-    //Get Main Manu Choice
+    //Get Main Menu Choice
     public static int getMenuChoice(){
         //Variables Used
         Scanner menuInput = new Scanner(System.in);
@@ -158,6 +158,7 @@ public class Program {
         }
     }
 
+    //Display Matrix
     public static void displayMatrix(int[][] product){
         for(int[] row : product){
             for(int column : row){
@@ -166,8 +167,6 @@ public class Program {
             System.out.println();
         }
     }
-
-
 
     //Display Connections
     public static void displayConnections(int connectionIn){
@@ -185,7 +184,6 @@ public class Program {
     //displayConnections(numberOfConnectionsUserInput);
     //--------------------
 
-//
 //    public static int[][] getMatrixFromUser(){
 //       int[][] outputMatrix = {{-2,-4},{-2,-4},{-2,-4},{-2,-4},{-2,-4}};
 //       //set outputMatrix = getMatrixValues
