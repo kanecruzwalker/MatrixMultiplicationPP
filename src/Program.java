@@ -19,13 +19,6 @@ public class Program {
 
         initialGreeting();
         runProgram(newMatrix, numberOfConnections);
-
-        //Put these in runProgram
-
-        //Output new matrix created when multiplying 2 matrices
-        //displayProduct(newMatrix);
-        //Output number of connections in matrix
-        //displayConnections(numberOfConnections);
     }
 
     public static void initialGreeting(){
@@ -45,24 +38,19 @@ public class Program {
                     System.out.println("\nYou have chosen ("+menuChoice+") : The product of Matrix A and B is as follows : ");
                     //Output new matrix created when multiplying 2 matrices
                     displayProduct(matrix);
-
                     break;
                 case 2:
-                    System.out.println("\nYou have chosen ("+menuChoice+") : The number of Connection in the Matrix C");
+                    System.out.println("\nYou have chosen ("+menuChoice+") : The number of Connection in the Matrix C"i);
                     //Output number of connections in matrix
                     displayConnections(connections);
-
-
                     break;
                 case 3:
                     System.out.println("\nYou have chosen ("+menuChoice+") -Inputting your own matrix-");
                     System.out.println("Working on matrix input ability");
-
                     break;
                 case 4:
                     System.out.println("\nYou have chosen (" + menuChoice + ") -Exit Program-");
                     System.out.println("=====================================================================");
-
                     System.out.println("Thank you for using the program. I hope you enjoyed the experience :D");
                     System.out.println("=====================================================================");
                     System.exit(0);
