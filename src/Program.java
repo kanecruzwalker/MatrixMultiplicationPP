@@ -1,6 +1,22 @@
 import java.util.Scanner;
 
 public class Program {
+    //Initial Program Greeting
+    public static void initialGreeting(){
+        System.out.println("-------------Welcome to Matrix Connections-------------");
+        System.out.println("        -We have provided a Matrix A and B-");
+        System.out.println("-Please input integer values to navigate the program-\n");
+    }
+
+    //Display Program Menu
+    public static void programMenu(){
+        System.out.println("---------------Input One of the following--------------");
+        System.out.println("(1) Check the Product of Two Matrices");
+        System.out.println("(2) Check the number of Connections in a Matrix");
+        System.out.println("(3) Input 2 Matrices");
+        System.out.println("(4) Exit Program");
+    }
+    
     //Main Function
     public static void main(String[] args) {
         //------------To Do
@@ -22,12 +38,6 @@ public class Program {
         runProgram(newMatrix, numberOfConnections, matrixA, matrixB);
     }
 
-    //Initial Program Greeting
-    public static void initialGreeting(){
-        System.out.println("-------------Welcome to Matrix Connections-------------");
-        System.out.println("        -We have provided a Matrix A and B-");
-        System.out.println("-Please input integer values to navigate the program-\n");
-    }
 
     //Program Initiation
     public static void runProgram(int[][] matrix, int connections, int[][] matrixA, int[][] matrixB){
@@ -53,7 +63,7 @@ public class Program {
                     System.out.println("Matrix B:");
                     displayMatrix(matrixB);
                     //Display C
-                    displayProductMatrix(matrix);
+                    displayMatrixCofAXB(matrix);
                     break;
                 // Number of connections in Matrix
                 case 2:
@@ -64,7 +74,7 @@ public class Program {
                 // Input Unique Matrices
                 case 3:
                     System.out.println("\nYou have chosen ("+menuChoice+") -Inputting your own matrix-");
-                    System.out.println("Working on matrix input ability");
+                    System.out.println(":::Functionality under construction:::");
                     break;
                 // Exit Program
                 case 4:
@@ -110,15 +120,6 @@ public class Program {
         return menuIntChoice;
     }
 
-    //Display Program Menu
-    public static void programMenu(){
-        System.out.println("---------------Input One of the following--------------");
-        System.out.println("(1) Check the Product of Two Matrices");
-        System.out.println("(2) Check the number of Connections in a Matrix");
-        System.out.println("(3) Input 2 Matrices");
-        System.out.println("(4) Exit Program");
-    }
-
     //Pass 2 Matrices return a Matrix of the product (A X B = C) a , b in, c out
     public static int[][] getMultipliedMatrices(int[][] matrixA, int[][] matrixB, int rowAndColLength){
         int[][] resultingMatrix = new int[rowAndColLength][rowAndColLength];
@@ -146,8 +147,9 @@ public class Program {
     }
 
     //Display a Matrix
-    public static void displayProductMatrix(int[][] product){
-        System.out.println("A x B = C");
+    public static void displayMatrixCofAXB(int[][] product){
+        System.out.println("" +
+                "Matrix C (A x B):");
 
         //Display Matrix
         for(int[] row : product){
@@ -172,37 +174,6 @@ public class Program {
     public static void displayConnections(int connectionIn){
         System.out.println(connectionIn +" connections found in matrix C (The product of matrix A and B)");
     }
-
-
-
-    //int[][] userMatrix1 = getMatrixFromUser();
-    //---Work Towards User Inputted Data---
-    //int[][] userMatrix2 = getMatrixFromUser();
-    //int[][] usersMatrixProduct = getMultipliedMatrices(userMatrix1, userMatrix2, rowAndCol);
-    //int numberOfConnectionsUserInput = getConnectionsInMatrix(usersMatrixProduct);
-    //displayInputtedMatrix1(userMatrix1);
-    //displayConnections(numberOfConnectionsUserInput);
-    //--------------------
-
-//    public static int[][] getMatrixFromUser(){
-//       int[][] outputMatrix = {{-2,-4},{-2,-4},{-2,-4},{-2,-4},{-2,-4}};
-//       //set outputMatrix = getMatrixValues
-//        //Scanner
-//        //Loop , try catch , validate non valid
-//
-//        return outputMatrix;
-//    }
-
-//    //Display a MatrixInputted
-//    public static void displayInputtedMatrix1(int[][] product){
-//        System.out.println("Product of two matrices is: ");
-//        for(int[] row : product){
-//            for(int column : row){
-//                System.out.print(column + "   ");
-//            }
-//            System.out.println();
-//        }
-//    }
 }
 
 //Big thanks to the following :
