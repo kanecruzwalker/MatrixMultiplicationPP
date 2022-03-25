@@ -5,12 +5,12 @@ public class Program {
     public static void initialGreeting(){
         System.out.println("-------------Welcome to Matrix Connections-------------");
         System.out.println("        -We have provided a Matrix A and B-");
-        System.out.println("-Please input integer values to navigate the program-\n");
+        System.out.println("-Please input integer values to navigate the program-");
     }
 
     //Display Program Menu
     public static void programMenu(){
-        System.out.println("---------------Input One of the following--------------");
+        System.out.println("\n---------------Input One of the following--------------");
         System.out.println("(1) Check the Product of Two Matrices");
         System.out.println("(2) Check the number of Connections in a Matrix");
         System.out.println("(3) Input 2 Matrices");
@@ -30,12 +30,14 @@ public class Program {
         int[][] matrixB = {{0,1,1,1},{1,1,0,1},{0,1,0,1},{1,0,1,0}};
 
         //Get Matrix of 2 matrices multiplied (Product of two matrices)
-        int[][] newMatrix = getMultipliedMatrices(matrixA, matrixB, rowAndCol);
+        int[][] matrixC = getMultipliedMatrices(matrixA, matrixB, rowAndCol);
         //Get Number of Connections
-        int numberOfConnections = getConnectionsInMatrix(newMatrix);
+        int numberOfConnections = getConnectionsInMatrix(matrixC);
 
+
+        //Program Starts Here
         initialGreeting();
-        runProgram(newMatrix, numberOfConnections, matrixA, matrixB);
+        runProgram(matrixC, numberOfConnections, matrixA, matrixB);
     }
 
 
@@ -67,13 +69,13 @@ public class Program {
                     break;
                 // Number of connections in Matrix
                 case 2:
-                    System.out.println("\nYou have chosen ("+menuChoice+") : The number of Connection in the Matrix C");
+                    System.out.println("\nYou have chosen ("+menuChoice+") : The number of Connection in the Matrix C : ");
                     //Output number of connections in matrix
                     displayConnections(connections);
                     break;
                 // Input Unique Matrices
                 case 3:
-                    System.out.println("\nYou have chosen ("+menuChoice+") -Inputting your own matrix-");
+                    System.out.println("\nYou have chosen ("+menuChoice+") -Inputting your own matrices-");
                     System.out.println(":::Functionality under construction:::");
                     break;
                 // Exit Program
@@ -139,17 +141,21 @@ public class Program {
 
     //Pass 1 matrices, return an int number of connections
     public static int getConnectionsInMatrix(int[][] matrixIn){
-        //Return value, set to -9 to establish value
-        int intOut = -9;
-        //calculate connections
-        //set intOut = connectionsCount
-        return intOut;
+        int count = 0;
+
+        //Add all values to count while iterating over MatrixIn
+        for(int[] innerArray : matrixIn){
+            for(int val: innerArray){
+                count = count+val;
+            }
+        }
+        return count;
     }
 
     //Display a Matrix
     public static void displayMatrixCofAXB(int[][] product){
         System.out.println("" +
-                "Matrix C (A x B):");
+                "Matrix C = (A x B):");
 
         //Display Matrix
         for(int[] row : product){
@@ -172,7 +178,8 @@ public class Program {
 
     //Display Connections
     public static void displayConnections(int connectionIn){
-        System.out.println(connectionIn +" connections found in matrix C (The product of matrix A and B)");
+        System.out.println(connectionIn +" connections have been found in matrix C.");
+        System.out.println("(Connections = Sum of all values in Matrix C)");
     }
 }
 
