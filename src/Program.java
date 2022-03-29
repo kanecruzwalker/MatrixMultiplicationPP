@@ -141,14 +141,12 @@ public class Program {
 
         for(int i = 0; i < rowAndColLength; i++){
             for(int j = 0; j < rowAndColLength; j++){
-                for(int k = 0; k < rowAndColLength; k++){
                     //Set value to 1 or 0 if val > 0
                     if(matrixIn[i][j] > 0){
                         temp[i][j] = 1;
                     }else{
                         temp[i][j] = 0;
                     }
-                }
             }
         }
         return temp;
